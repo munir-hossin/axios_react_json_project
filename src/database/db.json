@@ -298,6 +298,50 @@
       "category": "bed",
       "status": "inactive",
       "createAt": "2024-11-20T09:53:47.265Z"
+    },
+    {
+      "id": "0b6effec-9b3e-4ab5-bafa-699e7d364602",
+      "title": "",
+      "image": "",
+      "description": "",
+      "price": "",
+      "ratting": "",
+      "category": "",
+      "status": "inactive",
+      "createAt": "2024-11-20T16:30:16.225Z"
+    },
+    {
+      "id": "8b734524-d9bd-486e-b118-304c67d0df97",
+      "title": "",
+      "image": "",
+      "description": "",
+      "price": "",
+      "ratting": "",
+      "category": "",
+      "status": "inactive",
+      "createAt": "2024-11-20T16:30:17.128Z"
+    },
+    {
+      "id": "20943d8f-ef2e-4fa7-93c7-6b11ddf8b64f",
+      "title": "",
+      "image": "",
+      "description": "",
+      "price": "",
+      "ratting": "",
+      "category": "",
+      "status": "inactive",
+      "createAt": "2024-11-20T16:30:18.416Z"
+    },
+    {
+      "id": "7baf32d2-5674-48d3-8a90-d855f13ec01b",
+      "title": "At tempora maiores c",
+      "image": "Maiores rem est nih",
+      "description": "Sequi dolorem animi",
+      "price": "578",
+      "ratting": "75",
+      "category": "BED",
+      "status": "inactive",
+      "createAt": "2024-11-20T16:30:24.808Z"
     }
   ],
   "categories": [

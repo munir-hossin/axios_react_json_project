@@ -32,11 +32,7 @@ function App() {
       async function getData() {
         const conn = await api.get("/categories");
         setCategories(conn.data)
-    
-        
-  
-        
-        
+
       }
 
       getData();
@@ -52,7 +48,6 @@ function App() {
   return (
     <>
       <div className="grid bg-slate-100 p-6 max-w-screen-2xl mx-auto grid-cols-12 gap-4">
-       
         <Sidebar categories={categories} />
         <CreateProduct />
       </div>
