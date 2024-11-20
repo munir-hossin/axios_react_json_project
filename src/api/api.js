@@ -7,12 +7,20 @@ const api = axios.create({
 
 api.interceptors.request.use(function (config) {
     // Do something before request is sent
-    console.log(config);
+    const date = new  Date();
 
-    config.data = {
+    if(config.method === "post") {
+      config.data = {
         ...config.data,
-        _token:"b0b988e7-08d8-4617-a5b5-6c1402bb1639",
-    };
+        id: crypto.randomUUID(),
+        status: 'inactive',
+        createAt : date,
+      };
+      
+    }
+
+
+  
     
     return config;
   }, function (error) {
@@ -20,11 +28,23 @@ api.interceptors.request.use(function (config) {
     return Promise.reject(error);
   });
 
-  api.interceptors.response.use(function (response) {
-    console.log("this is response ...");
-    
+  api.interceptors.response.use(
+    function (response) {
+
+
+      const newArr = response.data.map(item => {
+        return {
+          ...item,
+          title: item.title.toUpperCase(),
+        };
+      });
+
+      response.data = newArr;
+
     return response;
   }, function (error) {
+
+    
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
     return Promise.reject(error);
@@ -32,3 +52,12 @@ api.interceptors.request.use(function (config) {
 
 
 export {api}
+
+
+
+
+
+
+
+
+
