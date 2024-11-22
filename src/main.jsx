@@ -4,10 +4,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './components/Root';
 import ProductList from './components/ProductList';
 import CreateProduct from './components/CreateProduct';
-import { allCategoryLoader, categoryLoader } from './loder/blogLoder';
+import { allBlogsByCategoryLoader, allProductsLoader, categoryLoader } from './loder/blogLoder';
+import CategoryBlogs from './components/CategoryBlogs';
+import { createProduct } from './action/blogsAction';
 
 const router = createBrowserRouter([
- 
+
   {
     path: "/",
     element: <Root />,
@@ -17,18 +19,32 @@ const router = createBrowserRouter([
         path: "/",
         element: <ProductList />,
         index: true,
-        loader: allCategoryLoader,
+        loader: allProductsLoader,
       },
       {
         path: "/create",
-        element: <CreateProduct />
+        element: <CreateProduct />,
+        action: createProduct,
+      },
+      {
+        path: "/category/:categoryName",
+        element: <CategoryBlogs />,
+        loader: allBlogsByCategoryLoader,
       }
+
 
     ]
 
   }
 
-]);
+],
+  {
+    future: {
+      v7_relativeSplatPath: true,
+
+    },
+  },
+);
 
 
 
@@ -36,4 +52,7 @@ createRoot(document.getElementById('root')).render(
 
   <RouterProvider router={router} />
 
-)
+);
+
+
+  

@@ -2,8 +2,10 @@ import { useLoaderData } from "react-router-dom";
 import ProductItem from "./ProductItem";
 
 
-function ProductList( ) {
-  const products = useLoaderData();
+export default function CategoryBlogs( ) {
+  const products = useLoaderData()
+
+  
 
 
 
@@ -14,10 +16,10 @@ function ProductList( ) {
           <div className="grid grid-cols-12 gap-4">
           {products.map((product) => 
              <ProductItem key={product.id} product={product} />)}
+        
 
           </div>
         </div>
     );
 }
 
-export default ProductList;
